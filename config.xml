@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config xmlns="http://github.com/wimmuskee/shell-harvester/">
 	<!-- default record save location -->
-        <recordpath>/Users/schruben/oai-pmh/shell-oaiharvester</recordpath>
+        <recordpath>/Users/[user name]/oai-pmh/shell-oaiharvester</recordpath>
 	<!-- temporary files are stored here -->
 	<temppath>/tmp/shell-harvester</temppath>
 	<!-- location of log file -->
@@ -17,8 +17,8 @@
 	<!-- command to execute after update -->
 	<!-- <updatecmd>echo ${identifier} >> /tmp/harvested.txt</updatecmd> -->
 
-	<repository id="rand">
-            <baseurl>https://www.rand.org/api/oai.html</baseurl>
+	<repository id="repo_id">
+            <baseurl>url</baseurl>
 		<metadataprefix>oai_dc</metadataprefix>
                 <!--<set>test</set>-->
 		<!-- By default the harvesting starts from Identify earliestDatestamp,
