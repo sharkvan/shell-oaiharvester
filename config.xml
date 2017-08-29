@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config xmlns="http://github.com/wimmuskee/shell-harvester/">
 	<!-- default record save location -->
-	<recordpath>/var/shell-harvester</recordpath>
+        <recordpath>/Users/schruben/oai-pmh/shell-oaiharvester</recordpath>
 	<!-- temporary files are stored here -->
 	<temppath>/tmp/shell-harvester</temppath>
 	<!-- location of log file -->
@@ -17,17 +17,17 @@
 	<!-- command to execute after update -->
 	<!-- <updatecmd>echo ${identifier} >> /tmp/harvested.txt</updatecmd> -->
 
-	<repository id="repository_id">
-		<baseurl>http://example.org/oaiprovider</baseurl>
-		<metadataprefix>lom</metadataprefix>
-		<set>test</set>
+	<repository id="rand">
+            <baseurl>https://www.rand.org/api/oai.html</baseurl>
+		<metadataprefix>oai_dc</metadataprefix>
+                <!--<set>test</set>-->
 		<!-- By default the harvesting starts from Identify earliestDatestamp,
 		use this only for debugging purposes. -->
-		<from>2012-02-29</from>
-		<until>2012-03-01</until>
+                <!--<from>2012-02-29</from>-->
+                <!--<until>2012-03-01</until>-->
 		<!-- <resumptiontoken>lom-10</resumptiontoken> -->
-		<conditional>only-context-po.xsl</conditional>
-		<recordpath>/tmp/records/repository_id</recordpath>
+                <!--<conditional>only-context-po.xsl</conditional>-->
+                <!--<recordpath>/tmp/records/repository_id</recordpath>-->
 		<!-- command to execute before delete -->
 		<!-- <deletecmd>updateMyDatabase.sh ${path}</deletecmd> -->
 		<!-- command to execute after update -->

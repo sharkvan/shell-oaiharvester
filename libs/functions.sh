@@ -58,7 +58,7 @@ function getRecords {
 		local identifier=$(xsltproc --stringparam data identifier --param record_nr ${count} ${INSTALLDIR}/retrieveData.xsl ${TMP}/oaipage.xml | sed s/\\//\%2F/g | sed s/\&/\%26/g | sed s/\ /\%20/g)
 		local filename="${identifier}"
 		[ "${COMPRESS}" == "true" ] && filename="${filename}.xz"
-		local namemd5=$(echo "${identifier}" | md5sum)
+		local namemd5=$(echo "${identifier}" | xargs md5 -q -s)
 		local storedir=${namemd5:0:2}
 		local path="${REPOSITORY_RECORDPATH}/${storedir}/${filename}"
 
@@ -154,7 +154,7 @@ function testRepository {
 	echo "# Validating the XML:"
 	echo "# fails without report are ignored strict wildcard errors"
 	if [ ! -f /tmp/OAI-PMH.xsd ]; then
-		curl ${CURL_OPTS} --silent "http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd" -o /tmp/OAI-PMH.xsd
+		curl ${CURL_OPTS} --silent "http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd" -o ${TMP}/OAI-PMH.xsd
 	fi
 
 	# solve strict error message with:
